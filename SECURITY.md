@@ -1,53 +1,53 @@
-# Security Policy
+# Política de Segurança
 
-## Supported Versions
+## Versões Suportadas
 
-Only the `master` branch receives security fixes. Downstream forks that
-re-publish an older snapshot should pull the fix forward on their own.
+Apenas a branch `master` recebe correções de segurança. Forks downstream que 
+republicam uma versão mais antiga devem aplicar a correção por conta própria.
 
-## Reporting a Vulnerability
+## Reportando uma Vulnerabilidade
 
-Please **do not** open a public issue for security problems.
+Por favor, **não** abra uma issue pública para problemas de segurança.
 
-Use GitHub's private vulnerability reporting:
+Use o sistema de relatórios de vulnerabilidades privados do GitHub:
 
-1. Go to <https://github.com/YakaTeam/kotatsu-parsers/security/advisories/new>
-2. Fill in what you found, a minimal reproduction, and the affected version
-   (commit SHA or JitPack release tag).
-3. Submit.
+1. Vá para <https://github.com/YakaTeam/kotatsu-parsers/security/advisories/new>
+2. Preencha o que você encontrou, forneça um caso mínimo de reprodução e a versão afetada
+   (commit SHA ou tag de release do JitPack).
+3. Envie.
 
-Only repository maintainers can see the report.
+Apenas os mantenedores do repositório podem ver o relatório.
 
-### What's in scope
+### O que está no escopo
 
-- Code-execution or sandbox-escape paths in the parser library itself (for
-  example: a parser that writes arbitrary files, triggers reflection on
-  attacker-controlled class names, or evaluates untrusted scripts in-process).
-- Requests made to unintended hosts due to URL handling in the shared
-  utilities (`org.koitharu.kotatsu.parsers.util`, `network`, `core`).
-- Credential / token leakage through logs, exceptions, or `toString()`.
-- Known-vulnerable third-party dependencies shipped by this library.
+- Caminhos de execução de código ou fuga de sandbox na própria biblioteca do parser (por
+  exemplo: um parser que escreve arquivos arbitrários, aciona reflexão em
+  nomes de classes controlados pelo atacante ou avalia scripts não confiáveis no processo).
+- Requisições feitas a hosts indesejados devido à manipulação de URLs em utilitários
+  compartilhados (`org.koitharu.kotatsu.parsers.util`, `network`, `core`).
+- Vazamento de credenciais / tokens por meio de logs, exceções ou `toString()`.
+- Dependências de terceiros com vulnerabilidades conhecidas enviadas por esta biblioteca.
 
-### What's out of scope
+### O que está fora do escopo
 
-- Behavior of the remote manga sites the parsers target. That's the site's
-  responsibility, not ours.
-- Missing TLS or weak ciphers on a parsed site.
-- CAPTCHA / Cloudflare bypass requests. Parsers go through a normal HTTP
-  client and honor the site's protections; marking a parser `@Broken`
-  when a site is gated is the intended behavior.
-- User-installed forks, third-party apps that embed the library, or
-  modifications made outside this repository.
+- O comportamento dos sites de mangá remotos alvo dos parsers. Isso é responsabilidade
+  do site, não nossa.
+- Falta de TLS ou cifras fracas em um site analisado (parser).
+- Solicitações para burlar CAPTCHA / Cloudflare. Os parsers passam por um cliente HTTP normal 
+  e respeitam as proteções do site; marcar um parser como `@Broken`
+  quando um site é bloqueado é o comportamento esperado.
+- Forks instalados pelo usuário, aplicativos de terceiros que incorporam a biblioteca ou
+  modificações feitas fora deste repositório.
 
-## Response Expectations
+## Expectativas de Resposta
 
-This is a volunteer-maintained open-source library. A realistic timeline:
+Esta é uma biblioteca de código aberto mantida por voluntários. Um cronograma realista:
 
-- Acknowledgement of the report within a few days.
-- Triage and a rough severity read within two weeks.
-- Fix merged to `master` before the advisory is disclosed publicly, where
-  practical.
+- Confirmação do recebimento do relatório em alguns dias.
+- Triagem e uma leitura aproximada da gravidade em duas semanas.
+- Correção mesclada na `master` antes que o aviso seja divulgado publicamente, onde
+  for viável.
 
-If a reported issue is fundamentally a remote-site problem or a downstream
-app problem, we will say so and close the advisory with an explanation
-rather than silently drop it.
+Se um problema relatado for fundamentalmente um problema de site remoto ou de um aplicativo
+downstream, informaremos isso e fecharemos o aviso com uma explicação
+em vez de descartá-lo silenciosamente.

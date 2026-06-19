@@ -1,13 +1,13 @@
 # kotatsu-parsers
 
-This library provides a collection of manga parsers for convenient access to manga available on the web. It can be used in
-JVM and Android applications. It's a fork of [kotatsu-parsers](https://github.com/KotatsuApp/kotatsu-parsers) from [KotatsuApp](https://github.com/KotatsuApp) organization.
+Esta biblioteca fornece uma coleção de parsers (analisadores) de mangá para acesso conveniente a mangás disponíveis na web. Ela pode ser usada em
+aplicações JVM e Android. É um fork do [kotatsu-parsers](https://github.com/KotatsuApp/kotatsu-parsers) da organização [KotatsuApp](https://github.com/KotatsuApp).
 
 ![Sources count](https://img.shields.io/badge/dynamic/yaml?url=https%3A%2F%2Fraw.githubusercontent.com%2FYakaTeam%2Fkotatsu-parsers%2Frefs%2Fheads%2Fmaster%2F.github%2Fsummary.yaml&query=total&label=manga%20sources&color=%23E9321C) [![](https://jitpack.io/v/YakaTeam/kotatsu-parsers.svg)](https://jitpack.io/#YakaTeam/kotatsu-parsers) [![Build](https://github.com/YakaTeam/kotatsu-parsers/actions/workflows/test-branch.yml/badge.svg?branch=master)](https://github.com/YakaTeam/kotatsu-parsers/actions/workflows/test-branch.yml) ![License](https://img.shields.io/github/license/YakaTeam/kotatsu-parsers)
 
-## Usage
+## Como Usar
 
-1. Add it to your root build.gradle at the end of repositories:
+1. Adicione no final dos repositórios do seu `build.gradle` principal:
 
 	```groovy
 	allprojects {
@@ -18,9 +18,9 @@ JVM and Android applications. It's a fork of [kotatsu-parsers](https://github.co
 	}
  	```
 
-2. Add the dependency
+2. Adicione a dependência
 
-	For Java/Kotlin project:
+	Para projetos Java/Kotlin:
 
 	```groovy
  	dependencies {
@@ -28,7 +28,7 @@ JVM and Android applications. It's a fork of [kotatsu-parsers](https://github.co
  	}
  	```
 
-	For Android project:
+	Para projetos Android:
 
 	```groovy
  	dependencies {
@@ -38,53 +38,52 @@ JVM and Android applications. It's a fork of [kotatsu-parsers](https://github.co
  	}
  	```
 
-	Versions are available on [JitPack](https://jitpack.io/#YakaTeam/kotatsu-parsers)
+	As versões estão disponíveis no [JitPack](https://jitpack.io/#YakaTeam/kotatsu-parsers)
 	
-	When used in Android
-	projects, [core library desugaring](https://developer.android.com/studio/write/java8-support#library-desugaring) with
-	the [NIO specification](https://developer.android.com/studio/write/java11-nio-support-table) should be enabled to support Java 8+ features.
+	Quando usado em projetos Android, 
+	o [core library desugaring](https://developer.android.com/studio/write/java8-support#library-desugaring) com
+	a [especificação NIO](https://developer.android.com/studio/write/java11-nio-support-table) deve estar habilitado para suportar os recursos do Java 8+.
 
-4. Usage in code
+4. Uso no código
 
    ```kotlin
    val parser = mangaLoaderContext.newParserInstance(MangaParserSource.MANGADEX)
    ```
 
-   `mangaLoaderContext` is an implementation of the `MangaLoaderContext` class.
-   See examples
-   of [Android](https://github.com/KotatsuApp/Kotatsu/blob/devel/app/src/main/kotlin/org/koitharu/kotatsu/core/parser/MangaLoaderContextImpl.kt)
-   and [Non-Android](https://github.com/YakaTeam/kotatsu-dl/blob/master/src/main/kotlin/org/koitharu/kotatsu/dl/parsers/MangaLoaderContextImpl.kt)
-   implementation.
+   `mangaLoaderContext` é uma implementação da classe `MangaLoaderContext`.
+   Veja exemplos 
+   de implementação no [Android](https://github.com/KotatsuApp/Kotatsu/blob/devel/app/src/main/kotlin/org/koitharu/kotatsu/core/parser/MangaLoaderContextImpl.kt)
+   e [Não-Android](https://github.com/YakaTeam/kotatsu-dl/blob/master/src/main/kotlin/org/koitharu/kotatsu/dl/parsers/MangaLoaderContextImpl.kt).
 
-## Projects that use the library
+## Projetos que utilizam a biblioteca
 
-- [Doki](https://github.com/DokiTeam/Doki) (WIP, Reference)
-- [Kotatsu](https://github.com/KotatsuApp/Kotatsu) (Dead)
+- [Doki](https://github.com/DokiTeam/Doki) (WIP, Referência)
+- [Kotatsu](https://github.com/KotatsuApp/Kotatsu) (Morto)
 - [Kototoro](https://github.com/skepsun/Kototoro)
-- [kotatsu-dl](https://github.com/YakaTeam/kotatsu-dl) (Forked from [KotatsuApp](https://github.com/KotatsuApp/kotatsu-dl))
-- [Shirizu](https://github.com/ztimms73/shirizu) (Dead)
-- [OtakuWorld](https://github.com/jakepurple13/OtakuWorld) (Switched to using [Tachiyomi Extensions](https://github.com/tachiyomiorg/extensions))
-- [Usagi](https://github.com/UsagiApp/Usagi) (For core only)
-- [Yumemi](https://github.com/YumemiProject/Yumemi) (Archived, Reference)
+- [kotatsu-dl](https://github.com/YakaTeam/kotatsu-dl) (Fork de [KotatsuApp](https://github.com/KotatsuApp/kotatsu-dl))
+- [Shirizu](https://github.com/ztimms73/shirizu) (Morto)
+- [OtakuWorld](https://github.com/jakepurple13/OtakuWorld) (Mudou para o uso das [Extensões do Tachiyomi](https://github.com/tachiyomiorg/extensions))
+- [Usagi](https://github.com/UsagiApp/Usagi) (Apenas para o core)
+- [Yumemi](https://github.com/YumemiProject/Yumemi) (Arquivado, Referência)
 
-## Contribution
+## Contribuição
 
-See [CONTRIBUTING.md](./CONTRIBUTING.md) for the guidelines.
+Consulte [CONTRIBUTING.md](./CONTRIBUTING.md) para ver as diretrizes.
 
-### License
+### Licença
 
 [![GNU GPLv3 Image](https://www.gnu.org/graphics/gplv3-127x51.png)](http://www.gnu.org/licenses/gpl-3.0.en.html)
 
 <div align="left">
 
-You may copy, distribute and modify the software as long as you track changes/dates in source files. Any modifications
-to or software including (via compiler) GPL-licensed code must also be made available under the GPL along with build &
-install instructions. See [LICENSE](./LICENSE) for more details.
+Você pode copiar, distribuir e modificar o software contanto que acompanhe as alterações/datas nos arquivos fonte. Qualquer modificação 
+ou software que inclua (via compilador) código licenciado sob a GPL também deve ser disponibilizado sob a GPL junto com as instruções de build e 
+instalação. Veja [LICENSE](./LICENSE) para mais detalhes.
 
 </div>
 
-### Disclaimer
+### Aviso Legal
 
 **`¯\_(ツ)_/¯`**
 
-This repository has been built by contributors / users, the content inside has been provided by **[Gemini](https://gemini.google.com/)**, but where is it, no one knows. No one knows how it works.
+Este repositório foi construído por contribuidores / usuários, o conteúdo interno foi fornecido pela **[Gemini](https://gemini.google.com/)**, mas onde ele está, ninguém sabe. Ninguém sabe como funciona.
