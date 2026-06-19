@@ -40,7 +40,7 @@ jobs:
           fi
           
           # Procura por fontes duplicadas na tabela principal
-          DUPLICATES=$(grep -Eo '\| [a-zA-Z0-9 ]+ \|' docs/Sources.md | sort | uniq -d | egrep -v 'Nome|Arquivo Kotlin|URL')
+          DUPLICATES=$(grep -Eo '\| [a-zA-Z0-9 ]+ \|' docs/Sources.md | sort | uniq -d | egrep -v 'Nome|Arquivo Kotlin|URL' || true)
           if [ ! -z "$DUPLICATES" ]; then
             echo "⚠️ Aviso: Possíveis fontes duplicadas encontradas:"
             echo "$DUPLICATES"
