@@ -40,14 +40,14 @@ jobs:
           fi
           
           # Procura por fontes duplicadas na tabela principal
-          DUPLICATES=\$(grep -Eo '\| [a-zA-Z0-9 ]+ \|' docs/Sources.md | sort | uniq -d | grep -v 'Nome')
-          if [ ! -z "\$DUPLICATES" ]; then
+          DUPLICATES=$(grep -Eo '\| [a-zA-Z0-9 ]+ \|' docs/Sources.md | sort | uniq -d | grep -v 'Nome')
+          if [ ! -z "$DUPLICATES" ]; then
             echo "⚠️ Aviso: Possíveis fontes duplicadas encontradas:"
-            echo "\$DUPLICATES"
+            echo "$DUPLICATES"
           fi
           
           echo "✅ Validação da documentação concluída."
           
-          echo "📋 **Deployment Summary**" >> \$GITHUB_STEP_SUMMARY
-          echo "✅ Construção do Gradle passou com sucesso. Código Kotlin validado!" >> \$GITHUB_STEP_SUMMARY
-          echo "✅ Documentação verificada." >> \$GITHUB_STEP_SUMMARY
+          echo "📋 **Deployment Summary**" >> $GITHUB_STEP_SUMMARY
+          echo "✅ Construção do Gradle passou com sucesso. Código Kotlin validado!" >> $GITHUB_STEP_SUMMARY
+          echo "✅ Documentação verificada." >> $GITHUB_STEP_SUMMARY
